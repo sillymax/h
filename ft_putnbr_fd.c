@@ -6,13 +6,13 @@
 /*   By: ychng <ychng@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 17:10:59 by ychng             #+#    #+#             */
-/*   Updated: 2023/05/04 17:51:05 by ychng            ###   ########.fr       */
+/*   Updated: 2023/05/06 15:18:17 by ychng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	add_into_temp(long n, char *temp)
+static void	add_into_temp(long n, char *temp)
 {
 	int		i;
 	long	just_n;
@@ -34,7 +34,7 @@ void	add_into_temp(long n, char *temp)
 	temp[i] = '\0';
 }
 
-void	ft_reverse(char *temp, char *result)
+static void	ft_reverse(char *temp, char *result)
 {
 	int		i;
 	int		length;
@@ -46,7 +46,7 @@ void	ft_reverse(char *temp, char *result)
 	result[i] = '\0';
 }
 
-void	write_to_fd(int fd, char *result)
+static void	write_to_fd(int fd, char *result)
 {
 	int	i;
 

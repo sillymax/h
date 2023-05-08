@@ -6,7 +6,7 @@
 /*   By: ychng <ychng@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 16:34:42 by ychng             #+#    #+#             */
-/*   Updated: 2023/05/05 17:45:42 by ychng            ###   ########.fr       */
+/*   Updated: 2023/05/08 15:57:40 by ychng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	t_list	*prev_node;
 	t_list	*next_node;
 
+	if (!lst || !del)
+		return ;
 	prev_node = 0;
 	next_node = *lst;
 	while (next_node != 0)

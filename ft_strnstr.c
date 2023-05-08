@@ -6,7 +6,7 @@
 /*   By: ychng <ychng@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 17:25:32 by ychng             #+#    #+#             */
-/*   Updated: 2023/04/30 18:20:22 by ychng            ###   ########.fr       */
+/*   Updated: 2023/05/08 11:57:55 by ychng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strnstr(const char *str, const char *substr, size_t length)
 	size_t	i;
 	size_t	j;
 
+	if (!str && !length)
+		return (NULL);
 	i = 0;
 	if (!substr[i])
 		return ((char *)str + i);

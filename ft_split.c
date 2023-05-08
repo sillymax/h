@@ -6,89 +6,66 @@
 /*   By: ychng <ychng@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 15:47:00 by ychng             #+#    #+#             */
-/*   Updated: 2023/05/03 20:24:07 by ychng            ###   ########.fr       */
+/*   Updated: 2023/05/07 17:37:05 by ychng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	count_word(char const *s, char c, int *count)
+static size_t	wordlen(char const *s, char c)
 {
-	int	length;
-	int	i;
-	int	old_i;
+	size_t	index;
 
-	length = ft_strlen(s);
-	i = 0;
-	while (i < length)
+	index = 0;
+	while (*s)
 	{
-		while (i < length)
-		{
-			if (!(s[i] == c))
-				break ;
-			i++;
-		}
-		old_i = 0;
-		while (i < length)
-		{
-			if (s[i] == c)
-				break ;
-			i++;
-		}
-		if (i > old_i)
-			*count = *count + 1;
+		index++;
+		while (*s && *s == c)
+			s++;
+		if (*s == '\0')
+			index--;
+		while (*s && *s != c)
+			s++;
 	}
+	return (index);
 }
 
-void	add_into_strs(int *j, char **strs, char *buffer, int *strs_index)
+static char	**fill_string(char **store, char const *s, char c)
 {
-	if (*j > 0)
-	{
-		buffer[*j] = '\0';
-		strs[*strs_index] = malloc(sizeof(char) * (*j + 1));
-		ft_strlcpy(strs[*strs_index], buffer, (*j + 1));
-		(*strs_index)++;
-	}
-}
+	size_t	len;
+	size_t	i;
 
-void	add_word(char const *s, char c,	char **strs, int *strs_index)
-{
-	int		length;
-	int		i;
-	int		j;
-	char	buffer[16384];
-
-	length = ft_strlen(s);
 	i = 0;
-	while (i < length)
+	while (*s)
 	{
-		while (i < length)
+		if (*s != c)
 		{
-			if (!(s[i] == c))
-				break ;
-			i++;
+			len = 0;
+			while (*s && *s != c)
+			{
+				len++;
+				s++;
+			}
+			store[i++] = ft_substr(s - len, 0, len);
 		}
-		j = 0;
-		while (i < length)
-		{
-			if (s[i] == c)
-				break ;
-			buffer[j++] = s[i++];
-		}
-		add_into_strs(&j, strs, buffer, strs_index);
+		else
+			s++;
 	}
+	store[i] = 0;
+	return (store);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	int		count;
-	char	**strs;
-	int		strs_index;
+	char	**split_string;
+	size_t	len_words;
 
-	count = 0;
-	count_word(s, c, &count);
-	strs = malloc(sizeof(char *) * count);
-	strs_index = 0;
-	add_word(s, c, strs, &strs_index);
-	return (strs);
+	if (!s)
+		return (NULL);
+	len_words = wordlen(s, c);
+	split_string = malloc(sizeof(char *) * (len_words + 1));
+	if (!split_string)
+		return (NULL);
+	split_string = fill_string(split_string, s, c);
+	return (split_string);
 }

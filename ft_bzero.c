@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ychng <ychng@42.fr>                        +#+  +:+       +#+        */
+/*   By: ychng <ychng@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 20:53:32 by ychng             #+#    #+#             */
-/*   Updated: 2023/04/28 22:21:39 by ychng            ###   ########.fr       */
+/*   Updated: 2023/05/07 20:41:09 by ychng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ void	ft_bzero(void *str, size_t length)
 	char	*char_str;
 
 	char_str = str;
-	if (!str)
-		return ;
 	i = 0;
 	while (i < length)
 	{

@@ -6,7 +6,7 @@
 /*   By: ychng <ychng@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 16:57:03 by ychng             #+#    #+#             */
-/*   Updated: 2023/05/04 17:10:16 by ychng            ###   ########.fr       */
+/*   Updated: 2023/05/08 12:22:14 by ychng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_putendl_fd(char *s, int fd)
 	int		i;
 	char	nl;
 
+	if (!s)
+		return ;
 	i = 0;
 	while (s[i])
 	{

@@ -6,7 +6,7 @@
 /*   By: ychng <ychng@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 23:03:06 by ychng             #+#    #+#             */
-/*   Updated: 2023/05/05 15:36:25 by ychng            ###   ########.fr       */
+/*   Updated: 2023/05/07 17:24:08 by ychng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ int	ft_lstsize(t_list *lst)
 		temp = temp -> next;
 		count++;
 	}
-	return (0);
+	return (count);
 }

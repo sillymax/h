@@ -6,7 +6,7 @@
 /*   By: ychng <ychng@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 19:38:32 by ychng             #+#    #+#             */
-/*   Updated: 2023/04/29 19:56:45 by ychng            ###   ########.fr       */
+/*   Updated: 2023/05/06 18:39:24 by ychng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strrchr(const char *str, int c)
 	flag = 0;
 	while (str[i])
 	{
-		if (str[i] == c)
+		if (str[i] == (char)c)
 		{
 			j = i;
 			flag = 1;
