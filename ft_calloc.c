@@ -3,24 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ychng <ychng@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ychng <ychng@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 19:28:05 by ychng             #+#    #+#             */
-/*   Updated: 2023/05/08 12:02:52 by ychng            ###   ########.fr       */
+/*   Updated: 2024/06/19 14:26:53 by ychng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nItems, size_t sizeOf)
+void	*ft_calloc(size_t count, size_t size)
 {
+	size_t	bytes;
 	void	*ptr;
 
-	if (nItems == SIZE_MAX)
-		return (NULL);
-	ptr = malloc(nItems * sizeOf);
+	if (count == 0 || size == 0)
+	{
+		count = 1;
+		size = 1;
+	}
+	bytes = count * size;
+	ptr = malloc(bytes);
 	if (!ptr)
 		return (NULL);
-	ft_bzero(ptr, nItems * sizeOf);
+	else
+		ft_bzero(ptr, bytes);
 	return (ptr);
 }
