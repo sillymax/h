@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ychng <ychng@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ychng <ychng@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 15:47:00 by ychng             #+#    #+#             */
-/*   Updated: 2023/05/09 00:31:56 by ychng            ###   ########.fr       */
+/*   Updated: 2024/06/21 00:44:46 by ychng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int	check_sep(char a, char b)
+static int	check_sep(char a, char b)
 {
 	if (a == b)
 		return (1);
 	return (0);
 }
 
-static	int	count_words(char *s, char c)
+static int	count_words(char *s, char c)
 {
 	int	count;
 	int	i;
@@ -38,7 +38,7 @@ static	int	count_words(char *s, char c)
 	return (count);
 }
 
-static	int	ft_strclen(char *s, char c)
+static int	ft_strclen(char *s, char c)
 {
 	int	i;
 
@@ -48,7 +48,7 @@ static	int	ft_strclen(char *s, char c)
 	return (i);
 }
 
-static	char	*add_word(char *s, char c)
+static char	*add_word(char *s, char c)
 {
 	int		i;
 	int		length;

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ychng <ychng@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ychng <ychng@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 18:22:20 by ychng             #+#    #+#             */
-/*   Updated: 2023/05/08 18:57:21 by ychng            ###   ########.fr       */
+/*   Updated: 2024/06/21 00:10:53 by ychng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	void	has_node(t_list **head, t_list *newnode, t_list **temp)
+static void	has_node(t_list **head, t_list *newnode, t_list **temp)
 {
 	if (*head == 0)
 	{
