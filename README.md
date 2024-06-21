@@ -27,10 +27,10 @@ To compile the library, follow these steps:
 
 ## :wrench: Using the Library
 
-To use Libft in your projects, include the `libft.h` header file in your source files. When compiling, add `-lft -Lpath_to_libft` flags to link the library.
+To use Libft in your projects, include the `libft.h` header file in your source files. When compiling, add `-lft -Lpath/to/libft.a` flags to link the library.
 
 ```markdown
-gcc your_file.c -L path/to/libft.a -lft -I path/to/libft.h -o your_executable
+gcc your_file.c -lft -Lpath/to/libft.a -Ipath/to/libft.h
 ```
 
 - - -
