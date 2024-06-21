@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ychng <ychng@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ychng <ychng@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 12:36:01 by ychng             #+#    #+#             */
-/*   Updated: 2023/05/02 15:46:18 by ychng            ###   ########.fr       */
+/*   Updated: 2024/06/22 00:51:46 by ychng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int	len;
-	int	i;
+	size_t	len;
+	size_t	i;
 
 	if (!s1 || !set)
 		return (NULL);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ychng <ychng@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ychng <ychng@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 19:38:32 by ychng             #+#    #+#             */
-/*   Updated: 2023/05/06 18:39:24 by ychng            ###   ########.fr       */
+/*   Updated: 2024/06/22 00:52:39 by ychng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,15 @@
 char	*ft_strrchr(const char *str, int c)
 {
 	int	i;
-	int	j;
-	int	flag;
 
-	i = 0;
-	j = 0;
-	flag = 0;
-	while (str[i])
-	{
-		if (str[i] == (char)c)
-		{
-			j = i;
-			flag = 1;
-		}
-		i++;
-	}
-	if (flag)
-		return ((char *)str + j);
-	else if (c == '\0')
+	i = (int)ft_strlen(str);
+	if ((char)c == '\0')
 		return ((char *)str + i);
-	else
-		return (NULL);
+	while (i > 0)
+	{
+		i--;
+		if (str[i] == (char)c)
+			return ((char *)str + i);
+	}
+	return (NULL);
 }

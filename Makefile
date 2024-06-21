@@ -48,7 +48,7 @@ RM = rm -f
 NAME = libft.a
 OBJS = $(SRCS:.c=.o)
 OBJS_BONUS = $(SRCS_BONUS:.c=.o)
-GCC = gcc
+CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
