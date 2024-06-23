@@ -1,6 +1,6 @@
-# Libft Introduction
+# libft - 42KL :sparkles:
 
-## :sparkles: What Is This?
+## :bulb: What Is This?
 **Libft (Library Of Functions)** is a fun project I worked on at 42KL, where I created basic C functions like `strlen`, `strcpy`, and `strcmp`, and put them into a library.
 
 <!-- Remember to add a video demonstration of Libft in action here! -->
